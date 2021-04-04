@@ -1,4 +1,4 @@
-﻿using BusinessLayer.EmployeeModule;
+﻿using BusinessLayer.GeneralInfoModule;
 using DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,9 +31,12 @@ namespace API
         {
             services.AddAutoMapper(typeof(MappingProfile));
             services.AddDbContext<AspDotNetCoreDBContext>(o => o.UseSqlServer(Configuration.GetConnectionString("AspDotNetCoreDB")));
-            services.AddScoped<ISaveEmployee, SaveEmployee>();
-            services.AddScoped<IGetEmployees, GetEmployees>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddControllers();
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });

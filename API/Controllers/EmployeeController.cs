@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BusinessLayer.EmployeeModule;
+using BusinessLayer.GeneralInfoModule;
+using BusinessLayer.GeneralInfoModule.Model.BusinessModel;
+using BusinessLayer.GeneralInfoModule.Model.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -13,19 +15,17 @@ namespace API.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private readonly ISaveEmployee _saveEmployee;
-        private readonly IGetEmployees _getEmployee;
-        public EmployeeController(ISaveEmployee saveEmployee, IGetEmployees getEmployee)
+        private readonly IEmployeeService _employeeService;
+        public EmployeeController(IEmployeeService employeeService)
         {
-            _saveEmployee = saveEmployee;
-            _getEmployee = getEmployee;
+            _employeeService = employeeService;
         }
         // GET: api/<EmployeeController>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            List<EmployeeModel> models =await _getEmployee.GetAllEmployees();
-            return Ok(models);
+            List<EmployeeViewModel> models =await _employeeService.GetAllEmployees();
+            return Ok(new {Result=models });
         }
 
         // GET api/<EmployeeController>/5
@@ -39,9 +39,11 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveEmployeeAsync([FromBody] EmployeeModel model)
         {
+            model = await _employeeService.SaveEmployeeAsync(model);
+
             return Ok(new
             {
-                Result = await _saveEmployee.SaveEmployeeAsync(model)
+                Result = model
             });
         }
 

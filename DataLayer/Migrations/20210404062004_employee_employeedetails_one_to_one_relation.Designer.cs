@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(AspDotNetCoreDBContext))]
-    [Migration("20210403120543_Home")]
-    partial class Home
+    [Migration("20210404062004_employee_employeedetails_one_to_one_relation")]
+    partial class employee_employeedetails_one_to_one_relation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,9 +45,31 @@ namespace DataLayer.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
                     b.HasKey("EmployeeDetailsId");
 
+                    b.HasIndex("EmployeeId")
+                        .IsUnique();
+
                     b.ToTable("EmployeeDetails");
+                });
+
+            modelBuilder.Entity("DataLayer.Models.EmployeeDetails", b =>
+                {
+                    b.HasOne("DataLayer.Models.Employee", "Employees")
+                        .WithOne("EmployeeDetails")
+                        .HasForeignKey("DataLayer.Models.EmployeeDetails", "EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("DataLayer.Models.Employee", b =>
+                {
+                    b.Navigation("EmployeeDetails");
                 });
 #pragma warning restore 612, 618
         }

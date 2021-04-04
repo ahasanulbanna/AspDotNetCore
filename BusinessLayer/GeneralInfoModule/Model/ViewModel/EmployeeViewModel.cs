@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataLayer.Models
+namespace BusinessLayer.GeneralInfoModule.Model.ViewModel
 {
-    public class Employee
+    public class EmployeeViewModel
     {
         public int EmployeeId { get; set; }
         public string Name { get; set; }
         public string Designation { get; set; }
-        public virtual EmployeeDetails EmployeeDetails { get; set; }
+        public virtual EmployeeDetailsViewModel EmployeeDetails { get; set; }
     }
 }
