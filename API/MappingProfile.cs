@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using BusinessLayer.DTOModel.BusinessModel;
 using BusinessLayer.GeneralInfoModule;
-using BusinessLayer.GeneralInfoModule.Model.BusinessModel;
 using BusinessLayer.GeneralInfoModule.Model.ViewModel;
 using DataLayer.Models;
 

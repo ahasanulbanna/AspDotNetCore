@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using BusinessLayer.GeneralInfoModule.Model.BusinessModel;
+using BusinessLayer.DTOModel.BusinessModel;
 using BusinessLayer.GeneralInfoModule.Model.ViewModel;
 
 namespace BusinessLayer.GeneralInfoModule
 {
     public interface IEmployeeService
     {
-        Task<EmployeeModel> SaveEmployeeAsync(EmployeeModel model);
+        Task<EmployeeModel> SaveEmployee(int EmployeeId, EmployeeModel model);
         Task<List<EmployeeViewModel>> GetAllEmployees();
+        Task<EmployeeViewModel> GetAllEmployee(int EmployeeId);
 
     }
 }

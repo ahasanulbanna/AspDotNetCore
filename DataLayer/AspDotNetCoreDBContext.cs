@@ -27,5 +27,6 @@ namespace DataLayer
         }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<EmployeeDetails> EmployeeDetails { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

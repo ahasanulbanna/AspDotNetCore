@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using BusinessLayer.GeneralInfoModule.Model.BusinessModel;
+using BusinessLayer.DTOModel.BusinessModel;
 using BusinessLayer.GeneralInfoModule.Model.ViewModel;
 using DataLayer;
 using DataLayer.Models;
@@ -20,9 +20,15 @@ namespace BusinessLayer.GeneralInfoModule
             _db = db;
             _mapper = mapper;
         }
-        public async Task<EmployeeModel> SaveEmployeeAsync(EmployeeModel model)
+        public async Task<EmployeeModel> SaveEmployee(int EmployeeId, EmployeeModel model)
         {
             Employee employee = _mapper.Map<EmployeeModel, Employee>(model);
+            if (EmployeeId > 0)
+            {
+                employee = await _db.Employees.FindAsync(EmployeeId);
+                employee.Name = model.Name;
+                employee.Designation = model.Designation;
+            }
             await _db.Employees.AddAsync(employee);
             await _db.SaveChangesAsync();
             model= _mapper.Map<Employee, EmployeeModel>(employee);
@@ -36,5 +42,11 @@ namespace BusinessLayer.GeneralInfoModule
             return employeesModel;
         }
 
+        public async Task<EmployeeViewModel> GetAllEmployee(int EmployeeId)
+        {
+            Employee employee = await _db.Employees.FindAsync(EmployeeId);
+            EmployeeViewModel employeeViewModel = _mapper.Map<Employee, EmployeeViewModel>(employee);
+            return employeeViewModel;
+        }
     }
 }
