@@ -6,12 +6,13 @@ using AutoMapper;
 using BusinessLayer.DTOModel.BusinessModel;
 using BusinessLayer.GeneralInfoModule.Model.ViewModel;
 using DataLayer;
+using DataLayer.Helpers;
 using DataLayer.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BusinessLayer.GeneralInfoModule
+namespace AspDotNetCore.Services.GeneralInfoModule
 {
-    public class EmployeeService: IEmployeeService
+    public class EmployeeService : IEmployeeService
     {
         private readonly AspDotNetCoreDBContext _db;
         private readonly IMapper _mapper;
@@ -22,7 +23,7 @@ namespace BusinessLayer.GeneralInfoModule
         }
         public async Task<EmployeeModel> SaveEmployee(int EmployeeId, EmployeeModel model)
         {
-            Employee employee = _mapper.Map<EmployeeModel, Employee>(model);
+            var employee = _mapper.Map<EmployeeModel, Employee>(model);
             if (EmployeeId > 0)
             {
                 employee = await _db.Employees.FindAsync(EmployeeId);
@@ -31,12 +32,16 @@ namespace BusinessLayer.GeneralInfoModule
             }
             await _db.Employees.AddAsync(employee);
             await _db.SaveChangesAsync();
-            model= _mapper.Map<Employee, EmployeeModel>(employee);
+            model = _mapper.Map<Employee, EmployeeModel>(employee);
             return model;
         }
         public async Task<List<EmployeeViewModel>> GetAllEmployees()
         {
+
             var employees = await _db.Employees.Include(x => x.EmployeeDetails).ToListAsync();
+            var employees2 = await _db.Employees.Include(x => x.EmployeeDetails).AsSplitQuery().ToListAsync();
+            var employeetest = await _db.Set<TestVm>().FromSqlRaw($"select * from Employees").ToListAsync();
+
 
             var employeesModel = _mapper.Map<List<Employee>, List<EmployeeViewModel>>(employees);
             return employeesModel;
@@ -44,8 +49,8 @@ namespace BusinessLayer.GeneralInfoModule
 
         public async Task<EmployeeViewModel> GetAllEmployee(int EmployeeId)
         {
-            Employee employee = await _db.Employees.FindAsync(EmployeeId);
-            EmployeeViewModel employeeViewModel = _mapper.Map<Employee, EmployeeViewModel>(employee);
+            var employee = await _db.Employees.FindAsync(EmployeeId);
+            var employeeViewModel = _mapper.Map<Employee, EmployeeViewModel>(employee);
             return employeeViewModel;
         }
     }

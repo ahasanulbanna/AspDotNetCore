@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using BusinessLayer.DTOModel.BusinessModel;
 using BusinessLayer.GeneralInfoModule.Model.ViewModel;
 
-namespace BusinessLayer.GeneralInfoModule
+namespace AspDotNetCore.Services.GeneralInfoModule
 {
     public interface IEmployeeService
     {

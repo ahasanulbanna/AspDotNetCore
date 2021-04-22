@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using AspDotNetCore.Services.DTOModel.BusinessModel;
 
 namespace BusinessLayer.DTOModel.BusinessModel
 {

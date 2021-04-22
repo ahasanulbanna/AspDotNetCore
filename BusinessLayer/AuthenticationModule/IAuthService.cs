@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataLayer.Models;
 
-namespace BusinessLayer.AuthenticationModule
+namespace AspDotNetCore.Services.AuthenticationModule
 {
     public interface IAuthService
     {

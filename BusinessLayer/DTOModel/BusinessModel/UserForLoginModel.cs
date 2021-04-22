@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessLayer.DTOModel.BusinessModel
+namespace AspDotNetCore.Services.DTOModel.BusinessModel
 {
     public class UserForLoginModel
     {

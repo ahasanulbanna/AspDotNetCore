@@ -7,7 +7,7 @@ using DataLayer;
 using DataLayer.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BusinessLayer.AuthenticationModule
+namespace AspDotNetCore.Services.AuthenticationModule
 {
     public class AuthService : IAuthService
     {

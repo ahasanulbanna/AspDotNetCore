@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspDotNetCore.Services.DTOModel.BusinessModel;
 using AutoMapper;
 using BusinessLayer.DTOModel.BusinessModel;
 using BusinessLayer.GeneralInfoModule;

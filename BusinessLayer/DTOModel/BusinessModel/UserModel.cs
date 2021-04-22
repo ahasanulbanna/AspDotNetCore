@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace BusinessLayer.DTOModel.BusinessModel
+namespace AspDotNetCore.Services.DTOModel.BusinessModel
 {
     public class UserModel
     {

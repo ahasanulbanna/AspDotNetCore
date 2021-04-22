@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BusinessLayer.DTOModel.BusinessModel;
 
-namespace BusinessLayer.DTOModel.BusinessModel
+namespace AspDotNetCore.Services.DTOModel.BusinessModel
 {
     public class EmployeeDetailsModel
     {

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspDotNetCore.Services.GeneralInfoModule;
 using BusinessLayer.DTOModel.BusinessModel;
-using BusinessLayer.GeneralInfoModule;
 using BusinessLayer.GeneralInfoModule.Model.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase
@@ -22,7 +22,6 @@ namespace API.Controllers
         {
             _employeeService = employeeService;
         }
-        // GET: api/<EmployeeController>
         [HttpGet]
         [Route("GetAllEmployees")]
         public async Task<IActionResult> GetAllEmployees()
