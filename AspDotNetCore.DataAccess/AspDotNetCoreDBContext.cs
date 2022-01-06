@@ -31,8 +31,10 @@ namespace AspDotNetCore.DataAccess
 
         }
         public DbSet<Employee> Employees { get; set; }
-        //  public DbSet<testvm> Employees { get; set; }
+         //public DbSet<testvm> Employees { get; set; }
         public DbSet<EmployeeDetails> EmployeeDetails { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

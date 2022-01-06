@@ -9,26 +9,26 @@ namespace AspDotNetCore.DataAccess.Models
     {
         public Customer()
         {
-            ActivityLogs = new HashSet<ActivityLog>();
-            BackInStockSubscriptions = new HashSet<BackInStockSubscription>();
-            BlogComments = new HashSet<BlogComment>();
-            CustomerAddresses = new HashSet<CustomerAddress>();
-            CustomerCustomerRoleMappings = new HashSet<CustomerCustomerRoleMapping>();
-            CustomerPasswords = new HashSet<CustomerPassword>();
-            ExternalAuthenticationRecords = new HashSet<ExternalAuthenticationRecord>();
-            ForumsPosts = new HashSet<ForumsPost>();
-            ForumsPrivateMessageFromCustomers = new HashSet<ForumsPrivateMessage>();
-            ForumsPrivateMessageToCustomers = new HashSet<ForumsPrivateMessage>();
-            ForumsSubscriptions = new HashSet<ForumsSubscription>();
-            ForumsTopics = new HashSet<ForumsTopic>();
-            Logs = new HashSet<Log>();
-            NewsComments = new HashSet<NewsComment>();
-            Orders = new HashSet<Order>();
-            PollVotingRecords = new HashSet<PollVotingRecord>();
-            ProductReviews = new HashSet<ProductReview>();
-            ReturnRequests = new HashSet<ReturnRequest>();
-            RewardPointsHistories = new HashSet<RewardPointsHistory>();
-            ShoppingCartItems = new HashSet<ShoppingCartItem>();
+            //ActivityLogs = new HashSet<ActivityLog>();
+            //BackInStockSubscriptions = new HashSet<BackInStockSubscription>();
+            //BlogComments = new HashSet<BlogComment>();
+            //CustomerAddresses = new HashSet<CustomerAddress>();
+            //CustomerCustomerRoleMappings = new HashSet<CustomerCustomerRoleMapping>();
+            //CustomerPasswords = new HashSet<CustomerPassword>();
+            //ExternalAuthenticationRecords = new HashSet<ExternalAuthenticationRecord>();
+            //ForumsPosts = new HashSet<ForumsPost>();
+            //ForumsPrivateMessageFromCustomers = new HashSet<ForumsPrivateMessage>();
+            //ForumsPrivateMessageToCustomers = new HashSet<ForumsPrivateMessage>();
+            //ForumsSubscriptions = new HashSet<ForumsSubscription>();
+            //ForumsTopics = new HashSet<ForumsTopic>();
+            //Logs = new HashSet<Log>();
+            //NewsComments = new HashSet<NewsComment>();
+            //Orders = new HashSet<Order>();
+            //PollVotingRecords = new HashSet<PollVotingRecord>();
+            //ProductReviews = new HashSet<ProductReview>();
+            //ReturnRequests = new HashSet<ReturnRequest>();
+            //RewardPointsHistories = new HashSet<RewardPointsHistory>();
+            //ShoppingCartItems = new HashSet<ShoppingCartItem>();
         }
 
         public int Id { get; set; }
@@ -56,27 +56,27 @@ namespace AspDotNetCore.DataAccess.Models
         public DateTime LastActivityDateUtc { get; set; }
         public int RegisteredInStoreId { get; set; }
 
-        public virtual Address BillingAddress { get; set; }
-        public virtual Address ShippingAddress { get; set; }
-        public virtual ICollection<ActivityLog> ActivityLogs { get; set; }
-        public virtual ICollection<BackInStockSubscription> BackInStockSubscriptions { get; set; }
-        public virtual ICollection<BlogComment> BlogComments { get; set; }
-        public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; }
-        public virtual ICollection<CustomerCustomerRoleMapping> CustomerCustomerRoleMappings { get; set; }
-        public virtual ICollection<CustomerPassword> CustomerPasswords { get; set; }
-        public virtual ICollection<ExternalAuthenticationRecord> ExternalAuthenticationRecords { get; set; }
-        public virtual ICollection<ForumsPost> ForumsPosts { get; set; }
-        public virtual ICollection<ForumsPrivateMessage> ForumsPrivateMessageFromCustomers { get; set; }
-        public virtual ICollection<ForumsPrivateMessage> ForumsPrivateMessageToCustomers { get; set; }
-        public virtual ICollection<ForumsSubscription> ForumsSubscriptions { get; set; }
-        public virtual ICollection<ForumsTopic> ForumsTopics { get; set; }
-        public virtual ICollection<Log> Logs { get; set; }
-        public virtual ICollection<NewsComment> NewsComments { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<PollVotingRecord> PollVotingRecords { get; set; }
-        public virtual ICollection<ProductReview> ProductReviews { get; set; }
-        public virtual ICollection<ReturnRequest> ReturnRequests { get; set; }
-        public virtual ICollection<RewardPointsHistory> RewardPointsHistories { get; set; }
-        public virtual ICollection<ShoppingCartItem> ShoppingCartItems { get; set; }
+        //public virtual Address BillingAddress { get; set; }
+        //public virtual Address ShippingAddress { get; set; }
+        //public virtual ICollection<ActivityLog> ActivityLogs { get; set; }
+        //public virtual ICollection<BackInStockSubscription> BackInStockSubscriptions { get; set; }
+        //public virtual ICollection<BlogComment> BlogComments { get; set; }
+        //public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; }
+        //public virtual ICollection<CustomerCustomerRoleMapping> CustomerCustomerRoleMappings { get; set; }
+        //public virtual ICollection<CustomerPassword> CustomerPasswords { get; set; }
+        //public virtual ICollection<ExternalAuthenticationRecord> ExternalAuthenticationRecords { get; set; }
+        //public virtual ICollection<ForumsPost> ForumsPosts { get; set; }
+        //public virtual ICollection<ForumsPrivateMessage> ForumsPrivateMessageFromCustomers { get; set; }
+        //public virtual ICollection<ForumsPrivateMessage> ForumsPrivateMessageToCustomers { get; set; }
+        //public virtual ICollection<ForumsSubscription> ForumsSubscriptions { get; set; }
+        //public virtual ICollection<ForumsTopic> ForumsTopics { get; set; }
+        //public virtual ICollection<Log> Logs { get; set; }
+        //public virtual ICollection<NewsComment> NewsComments { get; set; }
+        //public virtual ICollection<Order> Orders { get; set; }
+        //public virtual ICollection<PollVotingRecord> PollVotingRecords { get; set; }
+        //public virtual ICollection<ProductReview> ProductReviews { get; set; }
+        //public virtual ICollection<ReturnRequest> ReturnRequests { get; set; }
+        //public virtual ICollection<RewardPointsHistory> RewardPointsHistories { get; set; }
+        //public virtual ICollection<ShoppingCartItem> ShoppingCartItems { get; set; }
     }
 }

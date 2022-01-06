@@ -18,8 +18,8 @@ namespace AspDotNetCore.DataAccess.Helpers
                 //For Migration this code is uncommented
                 modelBuilder.Entity(vm).HasNoKey();
 
-                //This code commented when application run
-                // modelBuilder.Ignore(vm);
+                //This code commented when application run and Migration this code is uncommented
+                //modelBuilder.Ignore(vm);
             });
         }
     }
