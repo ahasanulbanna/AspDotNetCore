@@ -14,10 +14,12 @@ namespace AspDotNetCore.Api
             CreateMap<Employee, EmployeeViewModel>();
             CreateMap<EmployeeDetails, EmployeeDetailsModel>();
             CreateMap<EmployeeDetails, EmployeeDetailsViewModel>();
+            CreateMap<Customer, CustomerViewModel>();
 
             //***********Business Model To Data Model ****************
             CreateMap<EmployeeModel, Employee>();
             CreateMap<EmployeeDetailsModel, EmployeeDetails>();
+            CreateMap<CustomerViewModel, Customer>();
 
         }
     }

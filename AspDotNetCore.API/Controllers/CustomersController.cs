@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using AspDotNetCore.Services.CustomerModule.Commands;
 using AspDotNetCore.Services.CustomerModule.Queries;
 using AspDotNetCore.Services.DTOModel.ViewModel;
 using MediatR;
@@ -35,8 +36,10 @@ namespace AspDotNetCore.API.Controllers
 
         // POST api/<CustomersController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Route("AddCustomer")]
+        public async Task<CustomerViewModel> AddCustomer([FromBody] CustomerViewModel model)
         {
+            return await _mediatR.Send(new AddCustomerCommand(model));
         }
 
         // PUT api/<CustomersController>/5
