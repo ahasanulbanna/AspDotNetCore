@@ -4,14 +4,16 @@ using AspDotNetCore.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AspDotNetCore.DataAccess.Migrations
 {
     [DbContext(typeof(AspDotNetCoreDBContext))]
-    partial class AspDotNetCoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220107010224_Add_Module_Feature_SubFeature_Modal")]
+    partial class Add_Module_Feature_SubFeature_Modal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

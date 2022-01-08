@@ -36,5 +36,8 @@ namespace AspDotNetCore.DataAccess
         public DbSet<User> Users { get; set; }
         public DbSet<Currency> Currencies { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Module> Modules { get; set; }
+        public DbSet<Feature> Features { get; set; }
+        public DbSet<SubFeature> SubFeatures { get; set; }
     }
 }
